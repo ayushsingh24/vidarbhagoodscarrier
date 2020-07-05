@@ -25,7 +25,8 @@ SECRET_KEY = 'y(xk@+xo@g90&&m3u*p8viax=05y($y0va&6shf$evi=8=co)4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['vidarbhagoodscarrier.herokuapp.com','127.0.0.1',
+    'localhost']
 
 
 # Application definition
