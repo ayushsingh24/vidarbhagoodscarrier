@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'y(xk@+xo@g90&&m3u*p8viax=05y($y0va&6shf$evi=8=co)4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['vidarbhagoodscarrier.herokuapp.com','127.0.0.1',
     'localhost']
