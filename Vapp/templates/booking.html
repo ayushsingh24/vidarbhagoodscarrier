@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/design.css' %}">
+</head>
+<body>
+    
+    <div class="booking1">
+        <div class="booking">
+            <h2>Booking Form</h2>
+        </div>
+    </div><br>
+    <div class="booking1">
+        <div class="booking2">
+            <form action="{% url 'booking' %}" method="POST">
+                {% csrf_token %}
+                Name : <input type="text" name="name"><br><br>
+                From where : <input type="text" name="from_where"><br><br>
+                To where<input type="text" name="to_where"><br><br>
+                Email : <input type="text" name="email"><br><br>
+                Phone : <input type="text" name="phone"><br><br>
+                Click here to submit  <input class="sbmt" type="Submit">
+            </form>
+        </div>
+    </div><br>
+    <div class="booking1">
+        <div class="booking3">
+            <div><a href="{% url 'home' %}"><button>Back to Homepage</button></a></div>
+        </div>
+    </div><br>
+
+    <div class="booking1">
+        <div class="booking3">
+            {% for message in messages %}
+                <h2>{{ message }}</h2>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

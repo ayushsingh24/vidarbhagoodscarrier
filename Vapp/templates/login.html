@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Site</title>
+    <link rel="stylesheet" href="{% static 'css/design.css' %}">
+</head>
+<body>
+
+    <div class="booking1">
+        <div class="booking">
+            <h2>Login</h2>
+        </div>
+    </div><br>
+
+    <div class="booking1">
+        <div class="booking2">
+            <form action="" method="POST">
+                {% csrf_token %}
+                Username : <input type="text" name="username" placeholder="username"><br><br>
+                Password : <input type="password" name="password" placeholder="password"><br><br>
+                Click here : <input type="Submit">
+            </form>
+        </div>
+    </div><br>
+    <div class="booking1">
+        <div class="booking3">
+            <div><a href="{% url 'home' %}"><button>Back to Homepage</button></a></div>
+        </div>
+    </div><br>
+
+    <div class="booking1">
+        <div class="booking3">
+            {% for message in messages %}
+                <h2>{{ message }}</h2>
+            {% endfor %}
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/design.css' %}">
+</head>
+<body class="ownerbody">
+
+    <div class="booking1">
+        <div class="owner">
+            <h2>Bookings (accepted or yet to see)</h2>
+        </div>
+    </div><br>
+
+    {% if all_bookings %}
+
+            {% for booking in all_bookings %}
+                {% if booking.freight == 0 %}
+                    <div class="booking1">
+                        <div class="owner1">
+                            <ol>
+                                <li>Name : {{ booking.name }}</li><br>
+                                <li>From where : {{ booking.from_where }}</li><br>
+                                <li>To where : {{ booking.to_where }}</li><br>
+                                <li>Email : {{ booking.email }}</li><br>
+                                <li>Phone no. : {{ booking.phone }}</li><br>
+
+                                <form action="" method="POST">
+                                    {% csrf_token %}
+                                    <li>Rs.<input type="number" name="freight" placeholder="freight">  Rate for the booking</li>
+                                    <li><input type="text" name="acceptance" placeholder="acceptance">  Type Accept or Decline</li>
+                                    <input type="hidden" name="id" value="{{booking.id}}">
+                                    <input type="Submit">
+                                </form>
+                            </ol>
+                        </div>
+                    </div><br><br>
+                {% endif %}
+
+                <div class="booking1">
+                    <div class="owner2">
+                        <ul>
+                            <li>Name : {{ booking.name }}</li>
+                            <li>From : {{ booking.from_where }}</li>
+                            <li>To : {{ booking.to_where }}</li>
+                            <li>Phone no. : {{ booking.phone }}</li>
+                            <li>Email : {{ booking.email }}</li>
+                            <li>Freight : Rs. {{ booking.freight }}</li>
+                            <li>Accepted or not : {{ booking.acceptance }}</li>
+                        </ul>
+                    </div>
+                </div><br><br><br><br>
+                
+            {% endfor %}
+                
+        {% endif %}
+
+    <a href="{% url 'logout' %}"><button class="lgbtn">Logout</button></a>
+
+</body>
+</html>
