@@ -114,10 +114,16 @@ div.btnlg{
   justify-content: center;
 }
 
-button.btnlg{
-  width: 300px;
+button.btnlg1{
+  width: 250px;
   height: 50px;
   background-color: chartreuse;
+}
+
+button.btnlg2{
+  width: 250px;
+  height: 50px;
+  background-color: orange;
 }
 
 button.btnlg:hover{
