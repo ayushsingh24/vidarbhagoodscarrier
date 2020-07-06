@@ -136,7 +136,7 @@ button.btnlg:hover{
 div.inf{
   background: aqua;
   padding: 80px;
-  width: 70%;
+  width: 80%;
   border: 5px solid black;
   border-radius: 15px;
 }
@@ -147,7 +147,7 @@ div.cnt{
   background: aqua;
   padding: 40px;
   text-align: center;
-  width: 70%;
+  width: 80%;
   border: 5px solid black;
   border-radius: 15px;
 }
